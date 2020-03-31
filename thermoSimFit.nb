@@ -1,0 +1,849 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36424,        841]
+NotebookOptionsPosition[     35281,        805]
+NotebookOutlinePosition[     36003,        831]
+CellTagsIndexPosition[     35930,        826]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Pane", "[", 
+  RowBox[{
+   RowBox[{"Grid", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<thermoSimFit\>\"", ",", "\"\<Title\>\""}], "]"}], "}"}],
+        ",", "\n", 
+       RowBox[{"{", 
+        RowBox[{"MouseAppearance", "[", 
+         RowBox[{
+          RowBox[{"Button", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<Launch Software Package (Click me)\>\"", ",", 
+              "\"\<Section\>\""}], "]"}], ",", 
+            RowBox[{"{", " ", 
+             RowBox[{
+              RowBox[{"nb", "=", 
+               RowBox[{"EvaluationNotebook", "[", "]"}]}], ",", 
+              RowBox[{"NotebookFind", "[", 
+               RowBox[{
+               "nb", ",", "\"\<launchcell\>\"", ",", "All", ",", "CellTags"}],
+                "]"}], ",", 
+              RowBox[{"SelectionEvaluate", "[", "nb", "]"}]}], "}"}], ",", 
+            RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}], ",", 
+          "\"\<LinkHand\>\""}], "]"}], "}"}]}], "\n", "\n", "}"}], ",", " ", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
+     RowBox[{"ItemSize", "\[Rule]", "Large"}], ",", 
+     RowBox[{"BaselinePosition", "\[Rule]", "Baseline"}]}], "]"}], ",", 
+   RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Full"}]}], "]"}]], "Input",
+ CellOpen->False,
+ CellChangeTimes->{{3.7318570285015984`*^9, 3.731857058127807*^9}, {
+  3.7946775655499496`*^9, 3.794677566298256*^9}, {3.794677613204844*^9, 
+  3.7946776399790688`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"3df1ab10-93bd-4c3e-b07a-ff74b765819c"],
+
+Cell[BoxData[
+ PaneBox[
+  TagBox[GridBox[{
+     {
+      StyleBox["\<\"thermoSimFit\"\>", "Title",
+       StripOnInput->False]},
+     {
+      TagBox[
+       ButtonBox[
+        StyleBox["\<\"Launch Software Package (Click me)\"\>", "Section",
+         StripOnInput->False],
+        Appearance->None,
+        ButtonFunction:>{$CellContext`nb = EvaluationNotebook[], 
+          NotebookFind[$CellContext`nb, "launchcell", All, CellTags], 
+          SelectionEvaluate[$CellContext`nb]},
+        Evaluator->Automatic,
+        Method->"Preemptive"],
+       MouseAppearanceTag["LinkHand"]]}
+    },
+    AutoDelete->False,
+    BaselinePosition->Baseline,
+    GridBoxAlignment->{"Columns" -> {{Center}}},
+    GridBoxItemSize->{"Columns" -> {{Large}}, "Rows" -> {{Large}}}],
+   "Grid"],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{{3.794677617970434*^9, 3.7946776401588984`*^9}},
+ CellLabel->"Out[3]=",ExpressionUUID->"d24f8572-5b27-4866-a391-acc02fa5f5ab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Notebook", " ", "settings"}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"$FrontEnd", ",", 
+      RowBox[{"FrontEndEventActions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<KeyDown\>\"", ",", "\"\<\\t\>\""}], "}"}], 
+         "\[RuleDelayed]", 
+         RowBox[{"NotebookWrite", "[", 
+          RowBox[{
+           RowBox[{"SelectedNotebook", "[", "]"}], ",", "\"\<\\t\>\""}], 
+          "]"}]}], "}"}]}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+      RowBox[{"CellContext", "\[Rule]", "Notebook"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"$FrontEnd", ",", 
+      RowBox[{"\"\<DynamicUpdating\>\"", "\[Rule]", "True"}]}], "]"}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"$FrontEnd", ",", 
+      RowBox[{"\"\<DynamicEvaluationTimeout\>\"", "\[Rule]", "30"}]}], "]"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"click", "=", "\"\<Null\>\""}], ";"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Load", " ", "Packges"}], " ", "*)"}], "\t", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Get", "[", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+          "\"\<thermoSimFit\>\"", ",", "\"\<thermoSimFit.m\>\""}], "}"}], 
+        "]"}], "}"}], "]"}], "]"}], ";"}], "\n", 
+   RowBox[{"(*", "HG", "*)"}], "\n", 
+   RowBox[{"(*", " ", "Paths", " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHGSimpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Simulation\>\"", 
+        ",", "\"\<Sim-thermoCacheHG.nb\>\""}], "}"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"thermoHGFitpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Fitting\>\"", ",", 
+        "\"\<Fit-thermoCacheHG.nb\>\""}], "}"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHGSimbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(HG\), \(Sim\)]\)\>\"", ",", 
+       "thermoHGSimpath", ",", 
+       "\"\<Simulation for a Direct-Binding Assay (DBA)\>\"", ",", "1"}], 
+      "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHGFitbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(HG\), \(Fit\)]\)\>\"", ",", 
+       "thermoHGFitpath", ",", 
+       "\"\<Fitting for a Direct-Binding Assay (DBA)\>\"", ",", "1"}], 
+      "]"}]}], ";"}], "\n", "\n", "\n", 
+   RowBox[{"(*", "inputlines", "*)"}], "\n", "  ", "\n", "   ", "\n", "   ", 
+   RowBox[{
+    RowBox[{"hg", "=", 
+     RowBox[{"Grid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Text", "@", 
+            RowBox[{"Style", "[", 
+             RowBox[{"#", ",", "\"\<Section\>\""}], "]"}]}], "&"}], "/@", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Model\>\"", ",", "\"\<Thermodynamics\>\""}], "}"}]}], 
+         ",", "\n", "\t\t", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{
+            "\"\<H + G \!\(\*UnderoverscriptBox[\(\[Equilibrium]\), \
+SubscriptBox[\(k\), \(-1\)], SubscriptBox[\(k\), \(1\)]]\) HG\>\"", ",", 
+             "\"\<Subsection\>\""}], "]"}], ",", 
+           RowBox[{"Grid", "[", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"thermoHGSimbutton", ",", "thermoHGFitbutton"}], "}"}], 
+             "}"}], "]"}]}], "}"}]}], "\[IndentingNewLine]", "}"}], ",", "\n",
+        "\t\t", 
+       RowBox[{"Alignment", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Center", ",", 
+          RowBox[{"{", 
+           RowBox[{"Bottom", ",", "Center"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+       RowBox[{"ItemSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"20", ",", "50", ",", "40"}], "}"}], "}"}]}], ",", 
+       RowBox[{"Spacings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}]}], ";"}], "\n", "\t\t", 
+   "\n", "\t\t", "\n", "\n", "\t\t", "\n", "\t\t", 
+   RowBox[{"(*", "HDIDA", "*)"}], "\n", 
+   RowBox[{"(*", " ", "Paths", " ", "*)"}], "\n", "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHDIDASimpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Simulation\>\"", 
+        ",", "\"\<Sim-thermoCacheHD-IDA1.nb\>\""}], "}"}], "]"}]}], ";"}], 
+   "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHDIDAFitpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Fitting\>\"", ",", 
+        "\"\<Fit-thermoCacheHD-IDA1.nb\>\""}], "}"}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", "Buttons", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"thermoHDIDASimbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(IDA\), \(Sim\)]\)\>\"", ",", 
+       "thermoHDIDASimpath", ",", 
+       "\"\<Simulation for an Indicator-Displacement Assay (IDA)\>\"", ",", 
+       "1"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHDIDAFitbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(IDA\), \(Fit\)]\)\>\"", ",", 
+       "thermoHDIDAFitpath", ",", 
+       "\"\<Fitting for an Indicator-Displacement Assay (IDA)\>\"", ",", 
+       "1"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", "\n", "\n", "\n", 
+   RowBox[{"(*", "inputline", "*)"}], "\n", "   ", 
+   RowBox[{
+    RowBox[{"hdIDA", "=", 
+     RowBox[{"Grid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Text", "@", 
+            RowBox[{"Style", "[", 
+             RowBox[{"#", ",", "\"\<Section\>\""}], "]"}]}], "&"}], "/@", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Model\>\"", ",", "\"\<Thermodynamics\>\""}], "}"}]}], 
+         ",", "\n", "\t\t", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{
+            "\"\<HD + \!\(\*SubscriptBox[\(G\), \(a\)]\) \
+\!\(\*UnderoverscriptBox[\(\[Equilibrium]\), SubscriptBox[\(k\), \(-1\)], \
+SubscriptBox[\(k\), \(1\)]]\) \!\(\*SubscriptBox[\(HG\), \(a\)]\) + D\>\"", 
+             ",", "\"\<Subsection\>\""}], "]"}], ",", 
+           RowBox[{"Grid", "[", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"thermoHDIDASimbutton", ",", "thermoHDIDAFitbutton"}], 
+              "}"}], "}"}], "]"}]}], "}"}]}], "}"}], ",", "\n", "\t\t", 
+       RowBox[{"Alignment", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Center", ",", 
+          RowBox[{"{", 
+           RowBox[{"Bottom", ",", "Top"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+       RowBox[{"ItemSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"20", ",", "50", ",", "40"}], "}"}], "}"}]}], ",", 
+       RowBox[{"Spacings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{"(*", "HDGDA", "*)"}], "\n", 
+   RowBox[{"(*", " ", "Paths", " ", "*)"}], "\n", "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHDGDASimpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Simulation\>\"", 
+        ",", "\"\<Sim-thermoCacheHD-GDA.nb\>\""}], "}"}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"thermoHDGDAFitpath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Fitting\>\"", ",", 
+        "\"\<Fit-thermoHD-GDA1.nb\>\""}], "}"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", "Buttons", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"thermoHDGDASimbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(GDA\), \(Sim\)]\)\>\"", ",", 
+       "thermoHDGDASimpath", ",", 
+       "\"\<Simulation for a Guest-Displacement Assay (GDA)\>\"", ",", "1"}], 
+      "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"thermoHDGDAFitbutton", "=", 
+     RowBox[{"createButton", "[", 
+      RowBox[{
+      "\"\<\!\(\*SuperscriptBox[\(GDA\), \(Fit\)]\)\>\"", ",", 
+       "thermoHDGDAFitpath", ",", 
+       "\"\<Fitting for a Guest-Displacement Assay (GDA)\>\"", ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\n", "\n", "\n", 
+   RowBox[{"(*", "inputline", "*)"}], "\n", "   ", 
+   RowBox[{
+    RowBox[{"hdGDA", "=", 
+     RowBox[{"Grid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Text", "@", 
+            RowBox[{"Style", "[", 
+             RowBox[{"#", ",", "\"\<Section\>\""}], "]"}]}], "&"}], "/@", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Model\>\"", ",", "\"\<Thermodynamics\>\""}], "}"}]}], 
+         ",", "\n", "\t\t", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{
+            "\"\<\!\(\*SubscriptBox[\(HG\), \(a\)]\) + D \
+\!\(\*UnderoverscriptBox[\(\[Equilibrium]\), SubscriptBox[\(k\), \(-1\)], \
+SubscriptBox[\(k\), \(1\)]]\) HD + \!\(\*SubscriptBox[\(G\), \(a\)]\)\>\"", 
+             ",", "\"\<Subsection\>\""}], "]"}], ",", 
+           RowBox[{"Grid", "[", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"thermoHDGDASimbutton", ",", "thermoHDGDAFitbutton"}], 
+              "}"}], "}"}], "]"}]}], "}"}]}], "}"}], ",", "\n", "\t\t", 
+       RowBox[{"Alignment", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Center", ",", 
+          RowBox[{"{", 
+           RowBox[{"Bottom", ",", "Top"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+       RowBox[{"ItemSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"20", ",", "50", ",", "40"}], "}"}], "}"}]}], ",", 
+       RowBox[{"Spacings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}]}], ";"}], "\n", "\n", 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"myPrint", "[", "args__", "]"}], " ", ":=", 
+     RowBox[{"Print", "[", "args", "]"}]}], " ", ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"type", "=", 
+     RowBox[{"{", "\n", 
+      RowBox[{"{", 
+       RowBox[{"hg", ",", "hdIDA", ",", "hdGDA"}], "}"}], 
+      RowBox[{"(*", 
+       RowBox[{"1", ",", "1"}], "*)"}], "\n", "}"}]}], ";"}], "\n", "\n", 
+   "\n", 
+   RowBox[{"TableForm", "[", 
+    RowBox[{"First", "[", "type", "]"}], "]"}], "\n"}]}]], "Input",
+ CellOpen->False,
+ InitializationCell->True,
+ CellChangeTimes->{{3.730570259820649*^9, 3.730570284076767*^9}, {
+   3.730570523615018*^9, 3.7305705583176994`*^9}, {3.7305706499826975`*^9, 
+   3.7305707702171392`*^9}, {3.73057080195236*^9, 3.7305708461341505`*^9}, {
+   3.730570893114874*^9, 3.7305708952275753`*^9}, {3.730571050846961*^9, 
+   3.7305710948611765`*^9}, {3.730571145202388*^9, 3.7305711458266973`*^9}, {
+   3.730571183108097*^9, 3.7305714722257977`*^9}, {3.7305715132034426`*^9, 
+   3.7305715321860514`*^9}, {3.730571613342865*^9, 3.7305716260035815`*^9}, {
+   3.730571667406127*^9, 3.7305718878436537`*^9}, {3.730571991717594*^9, 
+   3.730572041170829*^9}, {3.7305720924520035`*^9, 3.7305721098420887`*^9}, {
+   3.73057215471836*^9, 3.7305723945060635`*^9}, {3.7305724285587263`*^9, 
+   3.730572428920059*^9}, {3.7305724734777975`*^9, 3.730572571352726*^9}, {
+   3.7305727085582333`*^9, 3.7305727252646084`*^9}, {3.730572769434162*^9, 
+   3.7305728942174196`*^9}, 3.7305729440226345`*^9, {3.7305729853434086`*^9, 
+   3.730573084342189*^9}, 3.7305733708961973`*^9, {3.730573410864435*^9, 
+   3.730573520163827*^9}, {3.730573576717553*^9, 3.730573591342184*^9}, {
+   3.7305736243691697`*^9, 3.730573626505551*^9}, {3.730573678928139*^9, 
+   3.7305736810535116`*^9}, {3.730573728941238*^9, 3.730573823455824*^9}, {
+   3.7305739299469814`*^9, 3.7305739874272203`*^9}, {3.7305740363039446`*^9, 
+   3.7305740363820696`*^9}, {3.730574115046507*^9, 3.730574117850099*^9}, {
+   3.7305741553180523`*^9, 3.730574186458759*^9}, {3.730574221777953*^9, 
+   3.7305742240467615`*^9}, {3.7305742564598265`*^9, 3.730574317779499*^9}, {
+   3.730574585630719*^9, 3.73057469717582*^9}, {3.73057487836206*^9, 
+   3.730574903404515*^9}, {3.730574936130156*^9, 3.730575378367953*^9}, {
+   3.730575528251693*^9, 3.73057556429557*^9}, 3.730575624734222*^9, {
+   3.7305757103344617`*^9, 3.730575726864094*^9}, {3.7305757632715497`*^9, 
+   3.7305757647329884`*^9}, {3.7305759180683155`*^9, 
+   3.7305759312153597`*^9}, {3.730576005984414*^9, 3.730576022296858*^9}, {
+   3.730576084301735*^9, 3.7305761828486056`*^9}, {3.7305762186704545`*^9, 
+   3.7305762688266177`*^9}, {3.730576502927579*^9, 3.7305765569748974`*^9}, 
+   3.7305765914997845`*^9, {3.730576665251994*^9, 3.7305767263565063`*^9}, {
+   3.7305767610067267`*^9, 3.730576906880028*^9}, {3.7305769631403804`*^9, 
+   3.7305770151619363`*^9}, {3.7306343250650845`*^9, 
+   3.7306343704725533`*^9}, {3.730634417963662*^9, 3.730634442472983*^9}, {
+   3.730634515405569*^9, 3.7306346357995634`*^9}, {3.7306346734654922`*^9, 
+   3.7306346856969643`*^9}, {3.7306347470240083`*^9, 
+   3.7306347711669006`*^9}, {3.730634909720372*^9, 3.7306349384908733`*^9}, {
+   3.7306349816710434`*^9, 3.730635152288417*^9}, {3.7306351904328265`*^9, 
+   3.7306352299218*^9}, {3.7306352689057627`*^9, 3.7306353159402723`*^9}, {
+   3.730710994240226*^9, 3.7307109944229107`*^9}, 3.730711089762951*^9, {
+   3.7307111315997696`*^9, 3.7307111504751515`*^9}, {3.7307112290375657`*^9, 
+   3.7307114293346243`*^9}, {3.730717782053279*^9, 3.730717820459092*^9}, {
+   3.7310452322556677`*^9, 3.7310453397993813`*^9}, {3.731125606657864*^9, 
+   3.731125703184621*^9}, {3.7311257498549314`*^9, 3.7311257871982937`*^9}, {
+   3.731125951073055*^9, 3.7311259916696606`*^9}, {3.731126032030489*^9, 
+   3.7311262634628057`*^9}, {3.7311264407010355`*^9, 3.731126448587225*^9}, {
+   3.731126501034278*^9, 3.7311266773610387`*^9}, {3.731127353963481*^9, 
+   3.7311273862198296`*^9}, {3.731143740433633*^9, 3.7311437813714504`*^9}, {
+   3.7311438528986273`*^9, 3.73114386948236*^9}, {3.7311441440268664`*^9, 
+   3.7311442009809895`*^9}, {3.7311442329961095`*^9, 3.73114431691864*^9}, {
+   3.7311443492748795`*^9, 3.731144455430337*^9}, {3.731144509542169*^9, 
+   3.731144531782956*^9}, {3.7311728719861655`*^9, 3.7311729058938465`*^9}, {
+   3.731172964100398*^9, 3.731172981991417*^9}, {3.7311730179604692`*^9, 
+   3.731173077815443*^9}, {3.7311731118641233`*^9, 3.7311731522865386`*^9}, 
+   3.73117322776609*^9, {3.7317563100026627`*^9, 3.731756315527299*^9}, {
+   3.7317564534612446`*^9, 3.7317564620143003`*^9}, {3.731756594414002*^9, 
+   3.731756601307232*^9}, {3.731756654094659*^9, 3.7317567396568527`*^9}, {
+   3.7318574039740744`*^9, 3.7318574656640706`*^9}, {3.7318576478745136`*^9, 
+   3.7318577914115524`*^9}, {3.7318578381946964`*^9, 
+   3.7318578720005584`*^9}, {3.7318579160960865`*^9, 3.731857923487007*^9}, {
+   3.7318582628368855`*^9, 3.7318582643994417`*^9}, {3.731923212726562*^9, 
+   3.7319232488797927`*^9}, 3.7342580854661446`*^9, {3.73425816021064*^9, 
+   3.7342581675276127`*^9}, {3.734258231464442*^9, 3.7342583209448037`*^9}, {
+   3.7342583641956625`*^9, 3.7342583695877576`*^9}, {3.7342584027930317`*^9, 
+   3.7342584746780286`*^9}, {3.73425867563513*^9, 3.7342587346280103`*^9}, {
+   3.7342587892844467`*^9, 3.734258801828206*^9}, {3.7342590932649155`*^9, 
+   3.7342591049446073`*^9}, {3.734259222345028*^9, 3.7342592880773096`*^9}, {
+   3.734259328978649*^9, 3.734259561421715*^9}, {3.734259591639892*^9, 
+   3.7342595927778177`*^9}, {3.734259626175288*^9, 3.7342596465925083`*^9}, {
+   3.734329745750307*^9, 3.734329749772083*^9}, {3.738395948970786*^9, 
+   3.738395949547137*^9}, {3.7383967790140877`*^9, 3.7383967824116397`*^9}, {
+   3.738404129315397*^9, 3.738404146980197*^9}, {3.7384045166944532`*^9, 
+   3.7384046022529745`*^9}, {3.738404782918404*^9, 3.7384047844091835`*^9}, {
+   3.738404831651327*^9, 3.7384048929605985`*^9}, {3.7384049394647694`*^9, 
+   3.7384049452452717`*^9}, 3.7384055848466454`*^9, {3.7384057167080336`*^9, 
+   3.7384057418417473`*^9}, 3.7384069261307364`*^9, {3.738430336883356*^9, 
+   3.7384303484190197`*^9}, {3.739794539378132*^9, 3.7397946520676823`*^9}, {
+   3.739794790895771*^9, 3.7397948710910993`*^9}, 3.7397949178493795`*^9, {
+   3.73979495073473*^9, 3.7397951596981783`*^9}, {3.7397951898732805`*^9, 
+   3.7397952419893847`*^9}, {3.739795273364025*^9, 3.7397953116183834`*^9}, {
+   3.739795402426938*^9, 3.7397954072781286`*^9}, {3.739795500316827*^9, 
+   3.7397955490168276`*^9}, {3.739795635895998*^9, 3.7397956406621637`*^9}, 
+   3.739795783747291*^9, {3.7397970569431133`*^9, 3.7397971165794296`*^9}, {
+   3.7397971480365863`*^9, 3.7397971819641485`*^9}, {3.739797219600358*^9, 
+   3.7397972957088575`*^9}, {3.739811879231007*^9, 3.7398119697555733`*^9}, {
+   3.7398121167830167`*^9, 3.739812267495415*^9}, {3.7398123241901865`*^9, 
+   3.7398123677582593`*^9}, {3.7398124803471127`*^9, 
+   3.7398124889248586`*^9}, {3.739812543656853*^9, 3.7398125493128605`*^9}, {
+   3.739812618153621*^9, 3.7398127077590775`*^9}, {3.7398127648190947`*^9, 
+   3.73981282151975*^9}, {3.739812856752596*^9, 3.739812932108675*^9}, {
+   3.7398129709148207`*^9, 3.7398129715398006`*^9}, {3.739863197521652*^9, 
+   3.73986319966047*^9}, {3.739863673524599*^9, 3.739863685261916*^9}, {
+   3.7404697139483814`*^9, 3.740469723272021*^9}, {3.7404699320257807`*^9, 
+   3.7404699782739477`*^9}, {3.74047005218808*^9, 3.7404700609658237`*^9}, {
+   3.740472701788635*^9, 3.7404727043643284`*^9}, {3.740472735224445*^9, 
+   3.7404727388942986`*^9}, {3.740476323263667*^9, 3.7404764051180983`*^9}, 
+   3.7404764351879745`*^9, {3.7416878334039965`*^9, 3.7416878396489973`*^9}, {
+   3.742210609221162*^9, 3.742210609400998*^9}, {3.7422106415270076`*^9, 
+   3.7422106416768694`*^9}, {3.7537076150682864`*^9, 3.75370761665257*^9}, 
+   3.753707829386796*^9, {3.753707941249563*^9, 3.7537079758318577`*^9}, {
+   3.753786926270671*^9, 3.7537869961365786`*^9}, {3.757871360581853*^9, 
+   3.7578713667931643`*^9}, 3.7578713996718144`*^9, {3.772878023107603*^9, 
+   3.772878241369219*^9}, {3.772878333048046*^9, 3.772878333707757*^9}, {
+   3.772878416817748*^9, 3.772878475518693*^9}, {3.7731268887097893`*^9, 
+   3.773126902427414*^9}, {3.776160042397395*^9, 3.776160043016341*^9}, 
+   3.776160106668466*^9, {3.776488319381773*^9, 3.7764883264224195`*^9}, {
+   3.7764883725287037`*^9, 3.7764884038906236`*^9}, 3.776493627468937*^9, {
+   3.7764936864742785`*^9, 3.7764936902976446`*^9}, {3.7782375348741446`*^9, 
+   3.778237536873699*^9}, {3.778237692081028*^9, 3.778237714869757*^9}, {
+   3.7782378512205267`*^9, 3.7782378639238367`*^9}, {3.7782379212447796`*^9, 
+   3.7782379702032614`*^9}, {3.7789245848221903`*^9, 
+   3.7789245856952486`*^9}, {3.7789253686795774`*^9, 3.7789253692992015`*^9}, 
+   3.7789255857981625`*^9, {3.782450945740349*^9, 3.7824509632858124`*^9}, {
+   3.7824532332393627`*^9, 3.7824532334319468`*^9}, {3.7824533738404016`*^9, 
+   3.7824533749272847`*^9}, 3.7830768068214073`*^9, {3.783758299198022*^9, 
+   3.7837583257423363`*^9}, {3.794677665878133*^9, 3.794677705046883*^9}, {
+   3.7946778560321455`*^9, 3.794677880311675*^9}, 3.794677911825508*^9, {
+   3.794677976749423*^9, 3.7946780124743557`*^9}, {3.794678058107123*^9, 
+   3.794678088269208*^9}, {3.7946781294570875`*^9, 3.7946781597940135`*^9}, {
+   3.794678192164052*^9, 3.7946783605302715`*^9}, 3.794678406028167*^9, {
+   3.794678437981593*^9, 3.794678479949751*^9}, {3.7946785425188437`*^9, 
+   3.794678543280135*^9}, {3.794678645033965*^9, 3.794678663704687*^9}, {
+   3.794678694227436*^9, 3.794678703579777*^9}, {3.7946787631575394`*^9, 
+   3.7946789625464897`*^9}, {3.7946790160899315`*^9, 3.794679101115239*^9}},
+ CellTags->"launchcell",
+ CellLabel->
+  "In[1126]:=",ExpressionUUID->"83708b5c-c307-4282-9c5c-e850cce3aacb"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox[GridBox[{
+         {
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Model\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "286b5e6b-c108-4aae-aaf7-1a81ae3ea9f2"],
+           Text[
+            Style["Model", "Section"]]], 
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Thermodynamics\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "f66a9d81-47ba-4778-8575-5451a69037fe"],
+           Text[
+            Style["Thermodynamics", "Section"]]]},
+         {
+          
+          StyleBox["\<\"H + G \
+\\!\\(\\*UnderoverscriptBox[\\(\[Equilibrium]\\), SubscriptBox[\\(k\\), \\(-1\
+\\)], SubscriptBox[\\(k\\), \\(1\\)]]\\) HG\"\>", "Subsection",
+           StripOnInput->False], 
+          TagBox[GridBox[{
+             {
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(HG\\), \
+\\(Sim\\)]\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80596 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Simulation\\Sim-\
+thermoCacheHG.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Simulation for a Direct-Binding Assay (DBA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, "Simulation for a Direct-Binding Assay (DBA)", 
+                "Tooltip"]& ], 
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(HG\\), \
+\\(Fit\\)]\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80597 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Fitting\\Fit-\
+thermoCacheHG.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Fitting for a Direct-Binding Assay (DBA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, "Fitting for a Direct-Binding Assay (DBA)", 
+                "Tooltip"]& ]}
+            },
+            AutoDelete->False,
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Grid"]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Center}}, "Rows" -> {Bottom, Center}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {20, 50, 40}},
+        GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{1}}}],
+       "Grid"]},
+     {
+      TagBox[GridBox[{
+         {
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Model\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "c5b81fab-e0db-4cfb-b649-a5456b008afd"],
+           Text[
+            Style["Model", "Section"]]], 
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Thermodynamics\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "74824a91-29aa-437f-a09a-f3d3d796d93d"],
+           Text[
+            Style["Thermodynamics", "Section"]]]},
+         {
+          
+          StyleBox["\<\"HD + \\!\\(\\*SubscriptBox[\\(G\\), \\(a\\)]\\) \
+\\!\\(\\*UnderoverscriptBox[\\(\[Equilibrium]\\), SubscriptBox[\\(k\\), \\(-1\
+\\)], SubscriptBox[\\(k\\), \\(1\\)]]\\) \\!\\(\\*SubscriptBox[\\(HG\\), \\(a\
+\\)]\\) + D\"\>", "Subsection",
+           StripOnInput->False], 
+          TagBox[GridBox[{
+             {
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(IDA\\), \\(Sim\\)]\
+\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80600 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Simulation\\Sim-\
+thermoCacheHD-IDA1.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Simulation for an Indicator-Displacement Assay (IDA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, 
+                "Simulation for an Indicator-Displacement Assay (IDA)", 
+                "Tooltip"]& ], 
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(IDA\\), \\(Fit\\)]\
+\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80601 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Fitting\\Fit-\
+thermoCacheHD-IDA1.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Fitting for an Indicator-Displacement Assay (IDA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, 
+                "Fitting for an Indicator-Displacement Assay (IDA)", 
+                "Tooltip"]& ]}
+            },
+            AutoDelete->False,
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Grid"]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {Bottom, Top}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {20, 50, 40}},
+        GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{1}}}],
+       "Grid"]},
+     {
+      TagBox[GridBox[{
+         {
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Model\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "ff7ea880-299b-42e3-99d9-90e4578a1f3c"],
+           Text[
+            Style["Model", "Section"]]], 
+          InterpretationBox[Cell[BoxData[
+            FormBox[
+             StyleBox["\<\"Thermodynamics\"\>", "Section",
+              StripOnInput->False], TextForm]], "InlineText",ExpressionUUID->
+            "5dcbb06e-a843-4163-bb49-a7bdf8eb246d"],
+           Text[
+            Style["Thermodynamics", "Section"]]]},
+         {
+          
+          StyleBox["\<\"\\!\\(\\*SubscriptBox[\\(HG\\), \\(a\\)]\\) + D \
+\\!\\(\\*UnderoverscriptBox[\\(\[Equilibrium]\\), SubscriptBox[\\(k\\), \\(-1\
+\\)], SubscriptBox[\\(k\\), \\(1\\)]]\\) HD + \\!\\(\\*SubscriptBox[\\(G\\), \
+\\(a\\)]\\)\"\>", "Subsection",
+           StripOnInput->False], 
+          TagBox[GridBox[{
+             {
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(GDA\\), \\(Sim\\)]\
+\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80604 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Simulation\\Sim-\
+thermoCacheHD-GDA.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Simulation for a Guest-Displacement Assay (GDA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, 
+                "Simulation for a Guest-Displacement Assay (GDA)", 
+                "Tooltip"]& ], 
+              TagBox[
+               TooltipBox[
+                TagBox[
+                 ButtonBox[
+                  
+                  StyleBox["\<\"\\!\\(\\*SuperscriptBox[\\(GDA\\), \\(Fit\\)]\
+\\)\"\>", "Section",
+                   StripOnInput->False,
+                   FontSize->18],
+                  Appearance->None,
+                  
+                  ButtonFunction:>(thermoSimFit`Private`nb$80605 = 
+                   NotebookOpen[
+                    "C:\\Users\\Stephan Sinn\\OneDrive\\Institute of \
+Nanotechnology\\Projects\\SoftwareDevelopment\\ThermoSimFit\\Fitting\\Fit-\
+thermoHD-GDA1.nb"]),
+                  Evaluator->Automatic,
+                  Method->"Preemptive"],
+                 MouseAppearanceTag["LinkHand"]],
+                "\"Fitting for a Guest-Displacement Assay (GDA)\"",
+                TooltipStyle->"TextStyling"],
+               
+               Annotation[#, "Fitting for a Guest-Displacement Assay (GDA)", 
+                "Tooltip"]& ]}
+            },
+            AutoDelete->False,
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Grid"]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {Bottom, Top}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {20, 50, 40}},
+        GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{1}}}],
+       "Grid"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.794677741466179*^9, 3.794677991124117*^9, {3.794678077159489*^9, 
+   3.794678104451231*^9}, 3.7946781377604036`*^9, 3.794678221435961*^9, 
+   3.7946784858892527`*^9, {3.7946786044954815`*^9, 3.7946786152735047`*^9}, 
+   3.7946787048406115`*^9, 3.794678815611476*^9, {3.794678947118764*^9, 
+   3.7946789657884855`*^9}, 3.7946791059567614`*^9, 3.7946801191296587`*^9},
+ CellTags->"launchcell",
+ CellLabel->
+  "Out[1149]//TableForm=",ExpressionUUID->"f45f9a73-16ac-4164-b9a3-\
+0f8724ea353d"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{1358, Automatic}, {-154, Automatic}},
+CellContext->Notebook,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "launchcell"->{
+  Cell[3288, 96, 20509, 416, 19, "Input",ExpressionUUID->"83708b5c-c307-4282-9c5c-e850cce3aacb",
+   CellOpen->False,
+   InitializationCell->True,
+   CellTags->"launchcell"],
+  Cell[23800, 514, 11465, 288, 377, "Output",ExpressionUUID->"f45f9a73-16ac-4164-b9a3-0f8724ea353d",
+   CellTags->"launchcell"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"launchcell", 35603, 816}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1696, 40, 19, "Input",ExpressionUUID->"3df1ab10-93bd-4c3e-b07a-ff74b765819c",
+ CellOpen->False],
+Cell[2279, 64, 972, 27, 95, "Output",ExpressionUUID->"d24f8572-5b27-4866-a391-acc02fa5f5ab"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3288, 96, 20509, 416, 19, "Input",ExpressionUUID->"83708b5c-c307-4282-9c5c-e850cce3aacb",
+ CellOpen->False,
+ InitializationCell->True,
+ CellTags->"launchcell"],
+Cell[23800, 514, 11465, 288, 377, "Output",ExpressionUUID->"f45f9a73-16ac-4164-b9a3-0f8724ea353d",
+ CellTags->"launchcell"]
+}, Open  ]]
+}
+]
+*)
+
