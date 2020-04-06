@@ -1,10 +1,10 @@
 # thermoSimFit
 
-GUI Simulation and fitting tools for thermodynamic binding isotherms, based on MM
+GUI Simulation and fitting tools for thermodynamic binding isotherms, based on Mathematica.
 
 ## Prerequisites
 
-Get your own Mathematica (11/12+) <https://www.wolfram.com/mathematica/>
+Download and install Mathematica (11/12+) <https://www.wolfram.com/mathematica/>
 
 ## Contributions
 
