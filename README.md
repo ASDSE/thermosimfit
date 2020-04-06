@@ -35,6 +35,8 @@ We are happy for any contributions. ADSDE is the perfect platform for further de
 4. click: save data
 5. Choose a directory to Save
 
+![](simulate_save.gif)
+
 ### Import raw data (txt) and fit to a model
 
 1. click: **Browse...** and choose file -> open
@@ -45,8 +47,14 @@ We are happy for any contributions. ADSDE is the perfect platform for further de
 6. click: **Click here to Fit** (choose the fixation wisely)
 7. results are presented at the end and can be saved
 
+### Save parameters
+
+In order to reduce frustration, one can save the filled parameters, to use them as a backup if the resulting fit with a lot of unfixed parameters is not well. **Note** The software package comes with pre-saved parameters for the provided real sample data with you can retrieve by simply clicking on **Load parameters**
+
 ### Sample data
 
 Sample data for DBA, IDA and GDA is provided, results can be found here ChemComm 2020 Sinn, Krämer, Biedermann
 
 Each sample data has a descriptive name and an info file with the same name providing a good guess. A fit leaving only the binding constant of interest unfixed will give the results presented in the paper.
+
+**Note**: The paper displays the mean of at least (often more repetitions) triplicates of titrations, whereas the sample data provided here is only one part of these repetitions. Thus, the obtained fitting results might differ slightly from the reported ones.
