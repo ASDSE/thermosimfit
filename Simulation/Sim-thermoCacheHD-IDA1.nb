@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    430875,       7503]
-NotebookOptionsPosition[    428833,       7449]
-NotebookOutlinePosition[    430015,       7484]
-CellTagsIndexPosition[    429909,       7478]
+NotebookDataLength[    430986,       7500]
+NotebookOptionsPosition[    428944,       7446]
+NotebookOutlinePosition[    430126,       7481]
+CellTagsIndexPosition[    430020,       7475]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -6192,8 +6192,8 @@ Cell[BoxData[
         RowBox[{"ParentDirectory", "[", 
          RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", 
         "\"\<Styles\>\"", ",", "\"\<inputline.m\>\""}], "}"}], "]"}], "]"}], 
-    ";"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", "Paths", "\n", "*)"}], "\n", 
+    ";"}], "\n", 
+   RowBox[{"(*", " ", "Paths", "\n", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"filename", "=", "\"\<sim-temp-thermHDComp\>\""}], ";"}], "\n", 
    "\n", 
@@ -6217,7 +6217,7 @@ Cell[BoxData[
                ",", "sigdin", ",", "sighdin", ",", "ga0in", ",", 
               "kequhgain"}], "}"}]}], "]"}], "}"}], ",", 
          RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}], ",", 
-       "\"\<LinkHand\>\""}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+       "\"\<LinkHand\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"variablesloadbutton", "=", 
      RowBox[{"MouseAppearance", "[", 
@@ -6245,7 +6245,7 @@ Cell[BoxData[
     "h0in", ",", "d0in", ",", "g0in", ",", "ga0in", ",", "kequhdin", ",", 
      "kequhgin", ",", "kequhgain", ",", "khg1in", ",", "khd1in", ",", "tmax", 
      ",", "sighdin", ",", "sigdin", ",", "sig0in", ",", "timesteps", ",", 
-     "concsteps"}], "]"}], "\[IndentingNewLine]", "\n", 
+     "concsteps"}], "]"}], "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"inputline", "=", 
      RowBox[{"{", "\[IndentingNewLine]", 
@@ -6407,23 +6407,23 @@ Cell[BoxData[
     RowBox[{"adjustedrsquared", "=", "1"}], ";"}], "\n", 
    RowBox[{
     RowBox[{"step", "=", 
-     RowBox[{"ga0in", "/", "concsteps"}]}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+     RowBox[{"ga0in", "/", "concsteps"}]}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{"Grid", "[", 
     RowBox[{"{", 
      RowBox[{"{", 
       RowBox[{
       "simulationbutton", ",", "variablesloadbutton", ",", 
-       "variablessavebutton"}], "}"}], "}"}], "]"}], "\[IndentingNewLine]", 
-   "\n", 
+       "variablessavebutton"}], "}"}], "}"}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"Style", "[", 
     RowBox[{
      RowBox[{"Grid", "[", 
       RowBox[{"inputline", ",", 
        RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}], ",", 
      "\"\<Subsubsection\>\"", ",", "Black", ",", 
-     RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], "\n", 
-   "\[IndentingNewLine]", 
+     RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{"(*", "Output", "*)"}], "\n", 
    RowBox[{
     RowBox[{"output", "=", "\"\<empty\>\""}], ";"}], "\[IndentingNewLine]", 
@@ -6490,11 +6490,6 @@ Cell[BoxData[
           RowBox[{"inputs", "[", 
            RowBox[{"[", 
             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}]}], ";", 
-        RowBox[{"column3", "=", 
-         RowBox[{"Flatten", "[", 
-          RowBox[{"inputs", "[", 
-           RowBox[{"[", 
-            RowBox[{"All", ",", "3"}], "]"}], "]"}], "]"}]}], ";", 
         "\[IndentingNewLine]", "\[IndentingNewLine]", " ", 
         RowBox[{"signaloutput", "=", 
          RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -6591,9 +6586,10 @@ Cell[BoxData[
    3.779167911325156*^9, 3.7791679286137276`*^9}, 3.7791680202517414`*^9, {
    3.7791680578396196`*^9, 3.7791680641860847`*^9}, {3.7791693779885616`*^9, 
    3.779169426374174*^9}, {3.794679605576871*^9, 3.7946796206539154`*^9}, {
-   3.7951874205806875`*^9, 3.7951874266540623`*^9}},
+   3.7951874205806875`*^9, 3.7951874266540623`*^9}, {3.795187685081892*^9, 
+   3.7951877129510984`*^9}},
  CellTags->"launchcell",
- CellLabel->"In[85]:=",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0"],
+ CellLabel->"In[93]:=",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -6704,10 +6700,11 @@ $CellContext`ga0in, $CellContext`kequhgain}]},
    3.783369699676317*^9}, {3.794679418577939*^9, 3.794679419855755*^9}, 
    3.794679505781228*^9, {3.7946796228418894`*^9, 3.7946796321392827`*^9}, {
    3.7950677514460845`*^9, 3.7950677657897816`*^9}, {3.7951874024454684`*^9, 
-   3.795187403479516*^9}, 3.7951874347435803`*^9},
+   3.795187403479516*^9}, 3.7951874347435803`*^9, {3.795187573972723*^9, 
+   3.795187574954814*^9}, 3.7951877235852523`*^9},
  CellTags->"launchcell",
  CellLabel->
-  "Out[120]=",ExpressionUUID->"8e302a0b-0c52-49a9-87a9-951463292dca"],
+  "Out[128]=",ExpressionUUID->"17f4b579-9e85-4f3f-9345-e7ccb8ec3bae"],
 
 Cell[BoxData[
  StyleBox[
@@ -6865,10 +6862,11 @@ Cell[BoxData[
    3.783369699676317*^9}, {3.794679418577939*^9, 3.794679419855755*^9}, 
    3.794679505781228*^9, {3.7946796228418894`*^9, 3.7946796321392827`*^9}, {
    3.7950677514460845`*^9, 3.7950677657897816`*^9}, {3.7951874024454684`*^9, 
-   3.795187403479516*^9}, 3.795187434752571*^9},
+   3.795187403479516*^9}, 3.7951874347435803`*^9, {3.795187573972723*^9, 
+   3.795187574954814*^9}, 3.795187723594242*^9},
  CellTags->"launchcell",
  CellLabel->
-  "Out[121]=",ExpressionUUID->"edc3d5a3-dd03-4720-af4d-4b50f9d5c1d7"]
+  "Out[129]=",ExpressionUUID->"67a44e07-6eb6-4bef-8b40-5a654878d9ad"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7117,14 +7115,12 @@ Cell[BoxData[
          RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "\n", "\t\t\t", 
         "]"}], ",", 
        RowBox[{"{", 
-        RowBox[{
-        "exportbutton", ",", "\"\<\>\"", ",", "datageneratebutton", ",", 
-         "\"\<\>\"", ",", 
+        RowBox[{"datageneratebutton", ",", "\"\<\>\"", ",", 
          RowBox[{"Dynamic", "[", 
           RowBox[{"Style", "[", 
-           RowBox[{"outputinfo", ",", "\"\<Section\>\""}], "]"}], "]"}]}], 
-        "}"}]}], "}"}], "}"}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]"}]}]], "Input",
+           RowBox[{"outputinfo", ",", "\"\<Section\>\""}], "]"}], "]"}], ",", 
+         "\"\<\>\"", ",", "exportbutton"}], "}"}]}], "}"}], "}"}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.7789179788720465`*^9, 3.778918011536069*^9}, {
    3.7789180456844935`*^9, 3.7789180509323225`*^9}, {3.7789181627821116`*^9, 
@@ -7140,10 +7136,10 @@ Cell[BoxData[
    3.7789214724104433`*^9, 3.778921510448676*^9}, {3.7789215409987745`*^9, 
    3.7789216948925657`*^9}, 3.778921797146428*^9, {3.7789219070084443`*^9, 
    3.778921949278208*^9}, {3.778921983238261*^9, 3.7789219848140774`*^9}, {
-   3.7789235262735524`*^9, 3.778923548777481*^9}},
+   3.7789235262735524`*^9, 3.778923548777481*^9}, {3.7951875934257207`*^9, 
+   3.795187611371106*^9}},
  CellTags->"simulation",
- CellLabel->
-  "In[125]:=",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb"],
+ CellLabel->"In[89]:=",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb"],
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -7175,22 +7171,22 @@ Cell[BoxData[
            Style["[H]", 
             RGBColor[0, 1, 1]]}, {1, 0}}}, Typeset`size$$ = {
         574., {181., 185.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-        Typeset`skipInitDone$$ = True, $CellContext`a1$18008$$ = 
-        False, $CellContext`a2$18009$$ = False, $CellContext`a3$18010$$ = 
-        False, $CellContext`a4$18011$$ = False, $CellContext`a5$18012$$ = 
-        False, $CellContext`a6$18013$$ = False}, 
+        Typeset`skipInitDone$$ = True, $CellContext`a1$28703$$ = 
+        False, $CellContext`a2$28704$$ = False, $CellContext`a3$28705$$ = 
+        False, $CellContext`a4$28706$$ = False, $CellContext`a5$28707$$ = 
+        False, $CellContext`a6$28708$$ = False}, 
         DynamicBox[Manipulate`ManipulateBoxes[
          1, StandardForm, 
           "Variables" :> {$CellContext`a1$$ = 1, $CellContext`a2$$ = 
             0, $CellContext`a3$$ = 0, $CellContext`a4$$ = 
             0, $CellContext`a5$$ = 0, $CellContext`a6$$ = 0}, 
           "ControllerVariables" :> {
-            Hold[$CellContext`a1$$, $CellContext`a1$18008$$, False], 
-            Hold[$CellContext`a2$$, $CellContext`a2$18009$$, False], 
-            Hold[$CellContext`a3$$, $CellContext`a3$18010$$, False], 
-            Hold[$CellContext`a4$$, $CellContext`a4$18011$$, False], 
-            Hold[$CellContext`a5$$, $CellContext`a5$18012$$, False], 
-            Hold[$CellContext`a6$$, $CellContext`a6$18013$$, False]}, 
+            Hold[$CellContext`a1$$, $CellContext`a1$28703$$, False], 
+            Hold[$CellContext`a2$$, $CellContext`a2$28704$$, False], 
+            Hold[$CellContext`a3$$, $CellContext`a3$28705$$, False], 
+            Hold[$CellContext`a4$$, $CellContext`a4$28706$$, False], 
+            Hold[$CellContext`a5$$, $CellContext`a5$28707$$, False], 
+            Hold[$CellContext`a6$$, $CellContext`a6$28708$$, False]}, 
           "OtherVariables" :> {
            Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
             Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -7272,32 +7268,6 @@ $CellContext`x])}, {$CellContext`x, 0, $CellContext`ga0in},
           TagBox[
            TooltipBox[
             FrameBox[
-             StyleBox["\<\"Save Simulation\"\>", "Section",
-              StripOnInput->False,
-              FontSize->18],
-             Background->GrayLevel[0.85],
-             FrameStyle->Directive[
-               GrayLevel[0.85], 12],
-             RoundingRadius->15,
-             StripOnInput->False],
-            "\"Save the simulated data as comma delimited .csv\"",
-            TooltipStyle->"TextStyling"],
-           
-           Annotation[#, "Save the simulated data as comma delimited .csv", 
-            "Tooltip"]& ],
-          Appearance->None,
-          ButtonFunction:>Export[
-            SystemDialogInput["FileSave", ".csv"], $CellContext`output],
-          Evaluator->Automatic,
-          Method->"Queued"],
-         MouseAppearanceTag["LinkHand"]]},
-       {"\<\"\"\>"},
-       {
-        TagBox[
-         ButtonBox[
-          TagBox[
-           TooltipBox[
-            FrameBox[
              StyleBox["\<\"Generate saveable Data\"\>", "Section",
               StripOnInput->False,
               FontSize->18],
@@ -7324,7 +7294,33 @@ $CellContext`thermoSimGenerateOutput[
        {
         DynamicBox[ToBoxes[
           Style[$CellContext`outputinfo, "Section"], StandardForm],
-         ImageSizeCache->{268., {6., 20.}}]}
+         ImageSizeCache->{474., {185.5, 198.5}}]},
+       {"\<\"\"\>"},
+       {
+        TagBox[
+         ButtonBox[
+          TagBox[
+           TooltipBox[
+            FrameBox[
+             StyleBox["\<\"Save Simulation\"\>", "Section",
+              StripOnInput->False,
+              FontSize->18],
+             Background->GrayLevel[0.85],
+             FrameStyle->Directive[
+               GrayLevel[0.85], 12],
+             RoundingRadius->15,
+             StripOnInput->False],
+            "\"Save the simulated data as comma delimited .csv\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "Save the simulated data as comma delimited .csv", 
+            "Tooltip"]& ],
+          Appearance->None,
+          ButtonFunction:>Export[
+            SystemDialogInput["FileSave", ".csv"], $CellContext`output],
+          Evaluator->Automatic,
+          Method->"Queued"],
+         MouseAppearanceTag["LinkHand"]]}
       },
       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
       GridBoxSpacings->{"Columns" -> {
@@ -7402,17 +7398,6 @@ $CellContext`x])}, {$CellContext`x, 0, $CellContext`ga0in},
        Button[
         Tooltip[
          Framed[
-          Style["Save Simulation", "Section", FontSize -> 18], RoundingRadius -> 
-          15, Background -> GrayLevel[0.85], FrameStyle -> Directive[
-            GrayLevel[0.85], 12]], 
-         "Save the simulated data as comma delimited .csv"], 
-        Export[
-         SystemDialogInput["FileSave", ".csv"], $CellContext`output], Method -> 
-        "Queued", Appearance -> None], "LinkHand"], "", 
-      MouseAppearance[
-       Button[
-        Tooltip[
-         Framed[
           Style["Generate saveable Data", "Section", FontSize -> 18], 
           RoundingRadius -> 15, Background -> GrayLevel[0.85], FrameStyle -> 
           Directive[
@@ -7424,7 +7409,18 @@ $CellContext`thermoSimGenerateOutput[
             Span[1, 10], 
             Span[8, 9]]]; Null, Appearance -> None], "LinkHand"], "", 
       Dynamic[
-       Style[$CellContext`outputinfo, "Section"]]}}}]]], "Output",
+       Style[$CellContext`outputinfo, "Section"]], "", 
+      MouseAppearance[
+       Button[
+        Tooltip[
+         Framed[
+          Style["Save Simulation", "Section", FontSize -> 18], RoundingRadius -> 
+          15, Background -> GrayLevel[0.85], FrameStyle -> Directive[
+            GrayLevel[0.85], 12]], 
+         "Save the simulated data as comma delimited .csv"], 
+        Export[
+         SystemDialogInput["FileSave", ".csv"], $CellContext`output], Method -> 
+        "Queued", Appearance -> None], "LinkHand"]}}}]]], "Output",
  CellChangeTimes->{{3.7789179856656103`*^9, 3.7789180135285854`*^9}, 
    3.7789180527462215`*^9, {3.7789183262938795`*^9, 3.7789184897941465`*^9}, 
    3.778918522133174*^9, {3.7789186468121123`*^9, 3.7789186516235485`*^9}, {
@@ -7440,11 +7436,12 @@ $CellContext`thermoSimGenerateOutput[
    3.7789233250737143`*^9, 3.7789234016842327`*^9}, {3.7789234622734966`*^9, 
    3.778923477844285*^9}, {3.778923527384224*^9, 3.778923556833053*^9}, {
    3.794679506003023*^9, 3.7946795416530313`*^9}, 3.794679632369069*^9, 
-   3.7950677660241413`*^9, 3.7951874036393633`*^9, 3.7951874372142897`*^9},
+   3.7950677660241413`*^9, 3.7951874036393633`*^9, 3.7951874372142897`*^9, {
+   3.795187575123654*^9, 3.79518757759037*^9}, 3.795187613740913*^9},
  CellTags->"simulation",
  CellLabel->
-  "Out[128]//TableForm=",ExpressionUUID->"f3809adf-f45e-497c-9cba-\
-253562fdb129"]
+  "Out[92]//TableForm=",ExpressionUUID->"bdffd583-4ebd-494f-ac57-\
+aa19f511b228"]
 }, Open  ]]
 },
 WindowSize->{1350, 685},
@@ -7459,26 +7456,26 @@ StyleDefinitions->"Default.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "launchcell"->{
-  Cell[370197, 6123, 20549, 472, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
+  Cell[370197, 6123, 20407, 468, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
    CellOpen->False,
    InitializationCell->True,
    CellTags->"launchcell"],
-  Cell[390749, 6597, 4994, 112, 52, "Output",ExpressionUUID->"8e302a0b-0c52-49a9-87a9-951463292dca",
+  Cell[390607, 6593, 5068, 113, 52, "Output",ExpressionUUID->"17f4b579-9e85-4f3f-9345-e7ccb8ec3bae",
    CellTags->"launchcell"],
-  Cell[395746, 6711, 6865, 159, 211, "Output",ExpressionUUID->"edc3d5a3-dd03-4720-af4d-4b50f9d5c1d7",
+  Cell[395678, 6708, 6939, 160, 211, "Output",ExpressionUUID->"67a44e07-6eb6-4bef-8b40-5a654878d9ad",
    CellTags->"launchcell"]},
  "simulation"->{
-  Cell[402648, 6875, 11674, 270, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
+  Cell[402654, 6873, 11704, 268, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
    CellOpen->False,
    CellTags->"simulation"],
-  Cell[414325, 7147, 14492, 299, 449, "Output",ExpressionUUID->"f3809adf-f45e-497c-9cba-253562fdb129",
+  Cell[414361, 7143, 14567, 300, 499, "Output",ExpressionUUID->"bdffd583-4ebd-494f-ac57-aa19f511b228",
    CellTags->"simulation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"launchcell", 429150, 7460},
- {"simulation", 429605, 7469}
+ {"launchcell", 429261, 7457},
+ {"simulation", 429716, 7466}
  }
 *)
 (*NotebookFileOutline
@@ -7489,20 +7486,20 @@ Cell[580, 22, 2699, 65, 19, "Input",ExpressionUUID->"e87bc921-9ea8-4d74-9446-82c
 Cell[3282, 89, 366878, 6029, 121, "Output",ExpressionUUID->"e154d532-ac7a-421d-8157-d94e606cc6dc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[370197, 6123, 20549, 472, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
+Cell[370197, 6123, 20407, 468, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
  CellOpen->False,
  InitializationCell->True,
  CellTags->"launchcell"],
-Cell[390749, 6597, 4994, 112, 52, "Output",ExpressionUUID->"8e302a0b-0c52-49a9-87a9-951463292dca",
+Cell[390607, 6593, 5068, 113, 52, "Output",ExpressionUUID->"17f4b579-9e85-4f3f-9345-e7ccb8ec3bae",
  CellTags->"launchcell"],
-Cell[395746, 6711, 6865, 159, 211, "Output",ExpressionUUID->"edc3d5a3-dd03-4720-af4d-4b50f9d5c1d7",
+Cell[395678, 6708, 6939, 160, 211, "Output",ExpressionUUID->"67a44e07-6eb6-4bef-8b40-5a654878d9ad",
  CellTags->"launchcell"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[402648, 6875, 11674, 270, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
+Cell[402654, 6873, 11704, 268, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
  CellOpen->False,
  CellTags->"simulation"],
-Cell[414325, 7147, 14492, 299, 449, "Output",ExpressionUUID->"f3809adf-f45e-497c-9cba-253562fdb129",
+Cell[414361, 7143, 14567, 300, 499, "Output",ExpressionUUID->"bdffd583-4ebd-494f-ac57-aa19f511b228",
  CellTags->"simulation"]
 }, Open  ]]
 }
