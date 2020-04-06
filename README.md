@@ -14,7 +14,7 @@ We are happy for any contributions. ADSDE is the perfect platform for further de
 
 ### Download and Installation
 
-1. Download the latest release
+1. Download the latest release <https://github.com/ASDSE/thermosimfit/releases>
 2. Unpack the zip
 3. Open the file **thermoSimFit.nb** (double click)
 
