@@ -47,6 +47,8 @@ We are happy for any contributions. ADSDE is the perfect platform for further de
 6. click: **Click here to Fit** (choose the fixation wisely)
 7. results are presented at the end and can be saved
 
+![](fitting.gif)
+
 ### Save parameters
 
 In order to reduce frustration, one can save the filled parameters, to use them as a backup if the resulting fit with a lot of unfixed parameters is not well. **Note** The software package comes with pre-saved parameters for the provided real sample data with you can retrieve by simply clicking on **Load parameters**
