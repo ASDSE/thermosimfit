@@ -1,0 +1,105 @@
+TITLE	IDA2_1956µl-MilliQ-28µl-CB7-1.5mM-30µl-TNS-5.3mM_add-nBuOH-10mM
+DATA TYPE	FLUORESCENCE SPECTRUM
+ORIGIN	JASCO
+OWNER	
+DATE	19/10/01
+TIME	14:28:40
+SPECTROMETER/DATA SYSTEM	
+LOCALE	1031
+XUNITS	Concentration [mmol/L]
+YUNITS	INTENSITY
+FIRSTX	    0.0000
+LASTX	    0.6542
+NPOINTS	      36
+XYDATA
+0.0000	3369.39
+0.0200	2876.46
+0.0398	2444.56
+0.0596	2109.45
+0.0794	1863.71
+0.0990	1700.56
+0.1186	1572.64
+0.1381	1451.36
+0.1575	1372.19
+0.1768	1278.61
+0.1961	1198.97
+0.2153	1135.91
+0.2344	1081.33
+0.2534	1028.52
+0.2724	999.281
+0.2913	959.372
+0.3101	929.419
+0.3288	901.582
+0.3475	869.807
+0.3661	847.322
+0.3846	817.876
+0.4031	796.536
+0.4215	779.918
+0.4398	761.883
+0.4580	751.028
+0.4762	734.45
+0.4943	721.144
+0.5123	705.552
+0.5303	694.738
+0.5482	682.767
+0.5660	668.336
+0.5838	656.698
+0.6015	649.117
+0.6191	640.401
+0.6367	627.643
+0.6542	623.015
+
+##### Extended Information
+[Comments]
+Sample name	IDA2_1956µl-MilliQ-28µl-CB7-1.5mM-30µl-TNS-5.3mM_add-nBuOH-10mM
+Comment	with stirrer, 15sec
+User
+Division
+Company	Institute of Nanotechnology
+
+[Detailed Information]
+Creation date	01.10.2019 14:28
+
+Data array type	Non-linear data array
+Horizontal axis	Concentration [mmol/L]
+Vertical axis	Int.
+Start	0 mmol/L
+End	0.654206 mmol/L
+Data points	36      
+
+[Measurement Information]
+Instrument name	FP8300
+Model name	FP-8300
+Serial No.	C048861450
+
+Accessory	STR-812
+Accessory S/N	A004761514
+  Cell type	10 mm Rectangular Cell
+  Temperature	25.00 C
+  Remark	PMMA Makro Cuvette
+
+Accessory	ATS-827
+Accessory S/N	A001061572
+
+Photometric mode	Em intensity
+Ex bandwidth	5 nm
+Em bandwidth	10 nm
+Response	2 sec
+Sensitivity	High
+Ex wavelength	405.0 nm
+Em wavelength	550.0 nm
+Shutter control	Open only for measurement
+Light source	Xe lamp
+Filter	Use
+
+Titration mode	Titration times
+Stage(1)	Target times 35 times, S1 0.004 mL, S2 0.001 mL
+
+Sample conc.	Cell: 21 umol/L, S1: 0 umol/L, S2: 0 umol/L
+Titrant conc.	Cell: 0 mmol/L, S1: 10 mmol/L, S2: 0 mmol/L
+
+Initial sample cell	2 mL
+Sample cell range	1.5 - 3.9 mL
+Syringe#1 range	0 - 1 mL
+Syringe#2 range	0 - 1 mL
+Syringe valve dir.	S1: Valve B, S2: Valve B

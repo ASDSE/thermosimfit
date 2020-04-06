@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    437272,       7652]
-NotebookOptionsPosition[    435229,       7598]
-NotebookOutlinePosition[    436412,       7633]
-CellTagsIndexPosition[    436306,       7627]
+NotebookDataLength[    437945,       7661]
+NotebookOptionsPosition[    435903,       7607]
+NotebookOutlinePosition[    437085,       7642]
+CellTagsIndexPosition[    436979,       7636]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -6196,8 +6196,8 @@ Cell[BoxData[
         RowBox[{"ParentDirectory", "[", 
          RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", 
         "\"\<Styles\>\"", ",", "\"\<inputline.m\>\""}], "}"}], "]"}], "]"}], 
-    ";"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", "Paths", "\n", "*)"}], "\n", 
+    ";"}], "\n", 
+   RowBox[{"(*", " ", "Paths", "\n", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"tempPath", "=", 
      RowBox[{"FileNameJoin", "[", 
@@ -6368,7 +6368,7 @@ Cell[BoxData[
     "h0in", ",", "d0in", ",", "g0in", ",", "ga0in", ",", "kequhdin", ",", 
      "kequhgin", ",", "kequhgain", ",", "khg1in", ",", "khd1in", ",", "tmax", 
      ",", "sighdin", ",", "sigdin", ",", "sig0in", ",", "timesteps", ",", 
-     "concsteps"}], "]"}], "\n", "\[IndentingNewLine]", 
+     "concsteps"}], "]"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"inputline", "=", 
      RowBox[{"{", "\[IndentingNewLine]", 
@@ -6535,7 +6535,7 @@ Cell[BoxData[
       RowBox[{
       "simulationbutton", ",", "variablesloadbutton", ",", 
        "variablessavebutton", ",", "defaultloadbutton"}], "}"}], "}"}], "]"}],
-    "\n", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\n", 
    RowBox[{"Style", "[", 
     RowBox[{
      RowBox[{"Grid", "[", 
@@ -6664,7 +6664,7 @@ Cell[BoxData[
            RowBox[{"List", "/@", "column2"}], ",", "2"}], "]"}]}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "put", "]"}]}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", "\n"}]}]], "Input",
+      "]"}]}], ";"}], "\n", "\[IndentingNewLine]"}]}]], "Input",
  CellOpen->False,
  InitializationCell->True,
  CellChangeTimes->{{3.730400773395277*^9, 3.7304008352393255`*^9}, {
@@ -6704,8 +6704,7 @@ Cell[BoxData[
    3.7789252473255057`*^9, 3.7789252506025743`*^9}, {3.7950670510552216`*^9, 
    3.795067053102031*^9}, {3.795067360916793*^9, 3.795067361994872*^9}},
  CellTags->"launchcell",
- CellLabel->
-  "In[175]:=",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0"],
+ CellLabel->"In[52]:=",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -6847,10 +6846,11 @@ $CellContext`ga0in, $CellContext`kequhgain},
    3.7833624225466995`*^9, 3.783362423691635*^9}, {3.7838544336887608`*^9, 
    3.783854443070034*^9}, {3.78392283568277*^9, 3.7839228374301453`*^9}, 
    3.7946796671308975`*^9, {3.7950643259127693`*^9, 3.795064327147093*^9}, 
-   3.7950670549144387`*^9, 3.795067363963544*^9},
+   3.7950670549144387`*^9, 3.795067363963544*^9, {3.795187454760051*^9, 
+   3.795187455805084*^9}, {3.7951877572850657`*^9, 3.7951877582921343`*^9}, 
+   3.7951879044966116`*^9, {3.7951880534747267`*^9, 3.7951880551042185`*^9}},
  CellTags->"launchcell",
- CellLabel->
-  "Out[221]=",ExpressionUUID->"ad31bb09-ea92-4f30-90cc-0c12c01ef5fc"],
+ CellLabel->"Out[98]=",ExpressionUUID->"83d3527a-3ba0-4a33-86be-cf72544cf061"],
 
 Cell[BoxData[
  StyleBox[
@@ -7003,10 +7003,11 @@ Cell[BoxData[
    3.7833624225466995`*^9, 3.783362423691635*^9}, {3.7838544336887608`*^9, 
    3.783854443070034*^9}, {3.78392283568277*^9, 3.7839228374301453`*^9}, 
    3.7946796671308975`*^9, {3.7950643259127693`*^9, 3.795064327147093*^9}, 
-   3.7950670549144387`*^9, 3.795067363963544*^9},
+   3.7950670549144387`*^9, 3.795067363963544*^9, {3.795187454760051*^9, 
+   3.795187455805084*^9}, {3.7951877572850657`*^9, 3.7951877582921343`*^9}, 
+   3.7951879044966116`*^9, {3.7951880534747267`*^9, 3.7951880551132092`*^9}},
  CellTags->"launchcell",
- CellLabel->
-  "Out[222]=",ExpressionUUID->"2350f15f-afdb-4b8d-a0ae-c8d49bbdc118"]
+ CellLabel->"Out[99]=",ExpressionUUID->"75f3cc4d-f296-4b2a-bb31-b2ac7b980f92"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7037,6 +7038,11 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Off", "[", 
      RowBox[{"Export", "::", "chtype"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Off", "[", 
+     StyleBox[
+      RowBox[{"First", "::", "nofirst"}], "MessageName"], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"datageneratebutton", "=", 
      RowBox[{"MouseAppearance", "[", 
@@ -7279,10 +7285,11 @@ Cell[BoxData[
    3.778921949278208*^9}, {3.778921983238261*^9, 3.7789219848140774`*^9}, {
    3.7789235262735524`*^9, 3.778923548777481*^9}, {3.778924301900028*^9, 
    3.778924353846382*^9}, {3.7789251224324226`*^9, 3.7789251545971923`*^9}, {
-   3.7950672383987904`*^9, 3.7950672498940926`*^9}},
+   3.7950672383987904`*^9, 3.7950672498940926`*^9}, {3.795187985133975*^9, 
+   3.7951880195421324`*^9}},
  CellTags->"simulation",
  CellLabel->
-  "In[171]:=",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb"],
+  "In[103]:=",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb"],
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -7313,23 +7320,23 @@ Cell[BoxData[
            Hold[$CellContext`a6$$], 0, 
            Style["[H]", 
             RGBColor[0, 1, 1]]}, {1, 0}}}, Typeset`size$$ = {
-        582., {183., 188.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-        Typeset`skipInitDone$$ = True, $CellContext`a1$93525$$ = 
-        False, $CellContext`a2$93526$$ = False, $CellContext`a3$93527$$ = 
-        False, $CellContext`a4$93528$$ = False, $CellContext`a5$93529$$ = 
-        False, $CellContext`a6$93530$$ = False}, 
+        574., {181., 185.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+        Typeset`skipInitDone$$ = True, $CellContext`a1$45447$$ = 
+        False, $CellContext`a2$45448$$ = False, $CellContext`a3$45449$$ = 
+        False, $CellContext`a4$45450$$ = False, $CellContext`a5$45451$$ = 
+        False, $CellContext`a6$45452$$ = False}, 
         DynamicBox[Manipulate`ManipulateBoxes[
          1, StandardForm, 
           "Variables" :> {$CellContext`a1$$ = 1, $CellContext`a2$$ = 
             0, $CellContext`a3$$ = 0, $CellContext`a4$$ = 
             0, $CellContext`a5$$ = 0, $CellContext`a6$$ = 0}, 
           "ControllerVariables" :> {
-            Hold[$CellContext`a1$$, $CellContext`a1$93525$$, False], 
-            Hold[$CellContext`a2$$, $CellContext`a2$93526$$, False], 
-            Hold[$CellContext`a3$$, $CellContext`a3$93527$$, False], 
-            Hold[$CellContext`a4$$, $CellContext`a4$93528$$, False], 
-            Hold[$CellContext`a5$$, $CellContext`a5$93529$$, False], 
-            Hold[$CellContext`a6$$, $CellContext`a6$93530$$, False]}, 
+            Hold[$CellContext`a1$$, $CellContext`a1$45447$$, False], 
+            Hold[$CellContext`a2$$, $CellContext`a2$45448$$, False], 
+            Hold[$CellContext`a3$$, $CellContext`a3$45449$$, False], 
+            Hold[$CellContext`a4$$, $CellContext`a4$45450$$, False], 
+            Hold[$CellContext`a5$$, $CellContext`a5$45451$$, False], 
+            Hold[$CellContext`a6$$, $CellContext`a6$45452$$, False]}, 
           "OtherVariables" :> {
            Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
             Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -7397,7 +7404,7 @@ $CellContext`ga0in])}, {$CellContext`x, 0, $CellContext`d0in},
               Style["[H]", 
                RGBColor[0, 1, 1]]}, {1, 0}}}, 
           "Options" :> {ControlPlacement -> Right}, "DefaultOptions" :> {}],
-         ImageSizeCache->{688., {214., 220.}},
+         ImageSizeCache->{680., {212., 218.}},
          SingleEvaluation->True],
         Deinitialization:>None,
         DynamicModuleValues:>{},
@@ -7440,7 +7447,7 @@ $CellContext`thermoSimGenerateOutput[
        {
         DynamicBox[ToBoxes[
           Style[$CellContext`outputinfo, "Section"], StandardForm],
-         ImageSizeCache->{469., {185.5, 198.5}}]},
+         ImageSizeCache->{474., {185.5, 198.5}}]},
        {"\<\"\"\>"},
        {
         TagBox[
@@ -7589,15 +7596,17 @@ $CellContext`thermoSimGenerateOutput[
    3.780219354135027*^9, 3.78021936019055*^9}, 3.7833624246257687`*^9, 
    3.7838544432798386`*^9, 3.783922837813789*^9, 3.783922889078187*^9, {
    3.7946797069260664`*^9, 3.79467971799682*^9}, 3.7950643282251716`*^9, 
-   3.7950670571487174`*^9, 3.7950672508471785`*^9},
+   3.7950670571487174`*^9, 3.7950672508471785`*^9, 3.795187455985916*^9, {
+   3.795187758456977*^9, 3.795187761430229*^9}, {3.7951880270991373`*^9, 
+   3.7951880552360973`*^9}},
  CellTags->"simulation",
  CellLabel->
-  "Out[174]//TableForm=",ExpressionUUID->"2dc523e4-09bc-4cdd-800a-\
-4f1dd076e38d"]
+  "Out[107]//TableForm=",ExpressionUUID->"c72fff81-1179-4104-aa65-\
+4670874c3b3c"]
 }, Open  ]]
 },
-WindowSize->{1366, 685},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 CellContext->Notebook,
 FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
@@ -7608,26 +7617,26 @@ StyleDefinitions->"Default.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "launchcell"->{
-  Cell[370324, 6127, 25033, 580, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
+  Cell[370324, 6127, 25029, 579, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
    CellOpen->False,
    InitializationCell->True,
    CellTags->"launchcell"],
-  Cell[395360, 6709, 6562, 143, 52, "Output",ExpressionUUID->"ad31bb09-ea92-4f30-90cc-0c12c01ef5fc",
+  Cell[395356, 6708, 6736, 144, 52, "Output",ExpressionUUID->"83d3527a-3ba0-4a33-86be-cf72544cf061",
    CellTags->"launchcell"],
-  Cell[401925, 6854, 6491, 154, 211, "Output",ExpressionUUID->"2350f15f-afdb-4b8d-a0ae-c8d49bbdc118",
+  Cell[402095, 6854, 6665, 155, 211, "Output",ExpressionUUID->"75f3cc4d-f296-4b2a-bb31-b2ac7b980f92",
    CellTags->"launchcell"]},
  "simulation"->{
-  Cell[408453, 7013, 11868, 271, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
+  Cell[408797, 7014, 12072, 277, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
    CellOpen->False,
    CellTags->"simulation"],
-  Cell[420324, 7286, 14889, 309, 499, "Output",ExpressionUUID->"2dc523e4-09bc-4cdd-800a-4f1dd076e38d",
+  Cell[420872, 7293, 15015, 311, 499, "Output",ExpressionUUID->"c72fff81-1179-4104-aa65-4670874c3b3c",
    CellTags->"simulation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"launchcell", 435547, 7609},
- {"simulation", 436002, 7618}
+ {"launchcell", 436220, 7618},
+ {"simulation", 436675, 7627}
  }
 *)
 (*NotebookFileOutline
@@ -7638,20 +7647,20 @@ Cell[580, 22, 2745, 66, 19, "Input",ExpressionUUID->"e87bc921-9ea8-4d74-9446-82c
 Cell[3328, 90, 366959, 6032, 121, "Output",ExpressionUUID->"138d41b3-4a07-4082-855c-b9dad59ace0c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[370324, 6127, 25033, 580, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
+Cell[370324, 6127, 25029, 579, 19, "Input",ExpressionUUID->"2a4d2fa6-6e31-4f2f-8fcb-74bf999a60f0",
  CellOpen->False,
  InitializationCell->True,
  CellTags->"launchcell"],
-Cell[395360, 6709, 6562, 143, 52, "Output",ExpressionUUID->"ad31bb09-ea92-4f30-90cc-0c12c01ef5fc",
+Cell[395356, 6708, 6736, 144, 52, "Output",ExpressionUUID->"83d3527a-3ba0-4a33-86be-cf72544cf061",
  CellTags->"launchcell"],
-Cell[401925, 6854, 6491, 154, 211, "Output",ExpressionUUID->"2350f15f-afdb-4b8d-a0ae-c8d49bbdc118",
+Cell[402095, 6854, 6665, 155, 211, "Output",ExpressionUUID->"75f3cc4d-f296-4b2a-bb31-b2ac7b980f92",
  CellTags->"launchcell"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[408453, 7013, 11868, 271, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
+Cell[408797, 7014, 12072, 277, 19, "Input",ExpressionUUID->"0a5ff464-3858-4775-a489-24f52e41badb",
  CellOpen->False,
  CellTags->"simulation"],
-Cell[420324, 7286, 14889, 309, 499, "Output",ExpressionUUID->"2dc523e4-09bc-4cdd-800a-4f1dd076e38d",
+Cell[420872, 7293, 15015, 311, 499, "Output",ExpressionUUID->"c72fff81-1179-4104-aa65-4670874c3b3c",
  CellTags->"simulation"]
 }, Open  ]]
 }
