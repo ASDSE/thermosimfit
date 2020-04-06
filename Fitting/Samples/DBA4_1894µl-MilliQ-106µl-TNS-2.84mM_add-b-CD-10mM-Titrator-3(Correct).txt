@@ -1,0 +1,100 @@
+TITLE	GDA4_1894µl-MilliQ-106µl-TNS-2.84mM_add-b-CD-10mM-Titrator
+DATA TYPE	FLUORESCENCE SPECTRUM
+ORIGIN	JASCO
+OWNER	
+DATE	19/09/17
+TIME	20:00:42
+SPECTROMETER/DATA SYSTEM	
+LOCALE	1031
+XUNITS	Concentration [mmol/L]
+YUNITS	INTENSITY
+FIRSTX	    0.0000
+LASTX	    0.8257
+NPOINTS	      31
+XYDATA
+0.0000	166.135
+0.0299	296.401
+0.0596	404.823
+0.0892	513.398
+0.1186	621.304
+0.1478	709.34
+0.1768	786.25
+0.2057	864.861
+0.2344	942.741
+0.2629	1013.57
+0.2913	1074.94
+0.3195	1125.4
+0.3475	1177.31
+0.3754	1233.06
+0.4031	1278.89
+0.4306	1330.71
+0.4580	1365.49
+0.4853	1400.02
+0.5123	1442.31
+0.5393	1480.02
+0.5660	1513.56
+0.5927	1543.23
+0.6191	1572.82
+0.6455	1599.08
+0.6716	1629.76
+0.6977	1654.73
+0.7236	1684.14
+0.7493	1706.37
+0.7749	1729.56
+0.8004	1748.48
+0.8257	1775.88
+
+##### Extended Information
+[Comments]
+Sample name	GDA4_1894µl-MilliQ-106µl-TNS-2.84mM_add-b-CD-10mM-Titrator
+Comment	with stirrer, 45sec, 2000µl gesamtvolumen
+User
+Division
+Company	Institute of Nanotechnology
+
+[Detailed Information]
+Creation date	17.09.2019 20:00
+
+Data array type	Non-linear data array
+Horizontal axis	Concentration [mmol/L]
+Vertical axis	Int.
+Start	0 mmol/L
+End	0.825688 mmol/L
+Data points	31      
+
+[Measurement Information]
+Instrument name	FP8300
+Model name	FP-8300
+Serial No.	C048861450
+
+Accessory	STR-812
+Accessory S/N	A004761514
+  Cell type	10 mm Rectangular Cell
+  Temperature	25.00 C
+  Remark	PMMA Makro Cuvette
+
+Accessory	ATS-827
+Accessory S/N	A001061572
+
+Photometric mode	Em intensity
+Ex bandwidth	5 nm
+Em bandwidth	5 nm
+Response	2 sec
+Sensitivity	High
+Ex wavelength	405.0 nm
+Em wavelength	550.0 nm
+Shutter control	Open only for measurement
+Light source	Xe lamp
+Filter	Use
+
+Titration mode	Titration times
+Stage(1)	Target times 30 times, S1 0.006 mL, S2 0 mL
+
+Sample conc.	Cell: 150 umol/L, S1: 0 umol/L, S2: 0 umol/L
+Titrant conc.	Cell: 0 mmol/L, S1: 10 mmol/L, S2: 0 mmol/L
+
+Initial sample cell	2 mL
+Sample cell range	1.5 - 3.9 mL
+Syringe#1 range	0 - 1 mL
+Syringe#2 range	0 - 1 mL
+Syringe valve dir.	S1: Valve B, S2: Valve B
