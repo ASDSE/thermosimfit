@@ -1,6 +1,6 @@
 # thermoSimFit
 
-GUI Simulation and fitting tools for thermodynamic binding isotherms, based on Mathematica.
+GUI Simulation and Fitting tools for thermodynamic binding isotherms, based on Mathematica.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ In order to reduce frustration, one can save the filled parameters, to use them 
 
 ### Sample data
 
-Sample data for DBA, IDA and GDA is provided in **/Fitting/Samples** (<https://github.com/ASDSE/thermosimfit/tree/master/Fitting/Samples>), results can be found here ChemComm 2020 Sinn, Krämer, Biedermann
+Sample data for DBA, IDA and GDA is provided in **/Fitting/Samples** (<https://github.com/ASDSE/thermosimfit/tree/master/Fitting/Samples>), results can be found here S Sinn, J Krämer, F Biedermann - Chemical Communications, 2020 <https://doi.org/10.1039/D0CC01841D>
 
 Each sample data has a descriptive name and an info file with the same name providing a good guess. A fit leaving only the binding constant of interest unfixed will give the results presented in the paper.
 
