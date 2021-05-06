@@ -1,6 +1,7 @@
 # thermoSimFit
 
 GUI Simulation and Fitting tools for thermodynamic binding isotherms, based on Mathematica.
+[![DOI](https://zenodo.org/badge/251751154.svg)](https://zenodo.org/badge/latestdoi/251751154)
 
 ## Prerequisites
 
